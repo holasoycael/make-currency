@@ -1,18 +1,31 @@
 {
   "name": "make-currency",
-  "version": "0.0.1",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "version": "0.0.4",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "build": "rollup --config",
+    "build:types": "npx dts-bundle-generator -o ./lib/@types/index.d.ts ./index.d.ts",
     "dev": "rollup --config",
     "test": "jest",
     "test:watch": "yarn test --watchAll",
-    "lint": "eslint src --max-warnings=0",
-    "prettier:fix": "yarn prettier --write .",
-    "prepare": "yarn husky install"
+    "lint": "eslint src --max-warnings=0"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/holasoycael/make-currency.git"
+  },
+  "keywords": [
+    "mask",
+    "currency",
+    "convert",
+    "cost",
+    "price",
+    "prices",
+    "money",
+    "format",
+    "node"
+  ],
   "author": "Natanael Lourenço",
   "license": "MIT",
   "husky": {
@@ -29,6 +42,8 @@
   "devDependencies": {
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.21.0",
+    "@rollup/plugin-alias": "^4.0.3",
+    "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-typescript": "^11.0.0",
@@ -36,6 +51,7 @@
     "@types/node": "^12.12.14",
     "@typescript-eslint/eslint-plugin": "^4.32.0",
     "@typescript-eslint/parser": "^4.32.0",
+    "babel-plugin-module-resolver": "^5.0.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -44,7 +60,11 @@
     "lint-staged": "^11.1.2",
     "prettier": "^2.7.1",
     "rollup": "^3.17.1",
+    "rollup-plugin-terser": "^7.0.2",
     "stream-browserify": "^3.0.0",
+    "ts-transform-paths": "^3.0.0",
     "typescript": "^4.2.0"
-  }
+  },
+  "jsdelivr": "lib/make.min.js",
+  "unpkg": "lib/make.min.js"
 }

@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/make-currency)](https://www.npmjs.com/package/make-currency) [![NPM](https://img.shields.io/npm/l/make-currency)](https://www.npmjs.com/package/make-currency)
 
-Work with front-end pricing in a simplified way
+Work with price values in JavaScript in a simplified way.\
 Support for USD and BRL
 
 ## Install
@@ -14,30 +14,66 @@ or
 yarn add make-currency
 ```
 
-## Usage
+## Usage with VanillaJS
+```js
+const BRL = Make.TYPES.BRL;
+Make.CONFIGURE({ money: BRL });
+
+(() => {
+  const app = document.querySelector('#app')
+  const useMoney = 2.99
+
+  app.innerHTML = `
+    <div class="card">
+      <span class="card__price">
+        ${Make.currency(useMoney)}
+      </span>
+      <input
+        class="card__input"
+        type="tel"
+        name="price"
+        value="${Make.currency(useMoney, 'INPUT')}"
+        placeholder="0,00"
+      />
+    </div>
+  `
+})()
+
+const card__input = document.querySelector('[name="price"]')
+const card__price = document.querySelector('.card__price')
+card__input.addEventListener('input', function(e) {
+  const currentTarget = e.target
+  const { floatValue, stringValue } = Make.currencyFn(currentTarget.value)
+  card__price.textContent = Make.currency(floatValue)
+  currentTarget.value = stringValue
+})
+```
+
+## Usage with JSX
 ```tsx
 import { useState } from 'react'
-import { currency, currencyFn } from 'make-currency'
-import pt from 'make-currency/lib/locale/pt-BR'
+import Make, { currency, currencyFn } from 'make-currency'
 
 // types and interfaces
-import { TCurrency } from 'make-currency'
+import { CurrencyProps } from 'make-currency'
+
+const BRL = Make.TYPES.BRL
+Make.CONFIGURE({ money: BRL })
 
 function App() {
   const [value, setValue] = useState(2.99)
 
-  const handleChange = ({ floatValue }: TCurrency) => setValue(floatValue)
-  const inputFn = (value: string) => handleChange(currencyFn(value, pt))
+  const inputFn = ({ floatValue }: CurrencyProps) => setValue(floatValue)
 
   return (
     <div>
       <span>
-        {currency(value, { addPrefix: true, locale: pt })}
+        {currency(value)}
       </span>
       <input
         type="tel"
-        value={currency(value, { locale: pt })}
-        onChange={(e) => inputFn(e.currentTarget.value)}
+        value={currency(value, 'INPUT')}
+        onChange={(e) => inputFn(currencyFn(e.currentTarget.value))}
         placeholder="0,00"
       />
     </div>
@@ -53,8 +89,8 @@ In the current version BRL for `floatValue` or `stringValue`
 
 | typed      	| input value   	| float value 	| string value  	|
 |------------	|---------------	|-------------	|---------------	|
-|            	|               	| 0.00        	|               	|
-| 1          	| 0.01          	| 0.01        	| 0,01          	|
+|            	| 0,00          	| 0.00        	| 0,00          	|
+| 1          	| 0,01          	| 0.01        	| 0,01          	|
 | 12         	| 0,12          	| 0.12        	| 0,12          	|
 | 123        	| 1,23          	| 1.23        	| 1,23          	|
 | 1234       	| 12,34          	| 0.12        	| 0,12          	|

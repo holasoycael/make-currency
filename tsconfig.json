@@ -11,14 +11,17 @@
     "esModuleInterop": true,
     "declaration": true,
     "moduleResolution": "node",
+    "typeRoots": ["./node_modules/@types"],
     "baseUrl": ".",
     "paths": {
       "@models/*": ["./src/models/*"],
+      "@modules/*": ["./src/modules/*"],
       "@utils/*": ["./src/utils/*"],
-      "@locale/*": ["./src/locale/*"],
+      "@TYPES/*": ["./src/TYPES/*"],
       "@typings/*": ["./src/typings/*"]
     },
+    "plugins": [{ "transform": "ts-transform-paths" }]
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.test.ts"]
+  "include": ["src/**/*", "./index.d.ts"],
+  "exclude": ["node_modules", "**/*.test.ts"],
 }

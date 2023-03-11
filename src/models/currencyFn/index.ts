@@ -3,8 +3,21 @@ import { currency } from '@models/currency'
 
 // types and interfaces
 import { TCurrency } from './types'
+import { TCurrencyOptions } from '@typings/Models'
 
-const currencyFn = (value: string): TCurrency => {
+/**
+ * Returns string and float value of currency.
+ *
+ * @example
+ * Here's a simple example:
+ * ```
+ * currencyFn('29,99') // Prints { floatValue: 29.99, stringValue: '29,99' }:
+ * ```
+ * @param {string} value
+ * @param {object} options
+ * @returns {string}
+ */
+const currencyFn = (value: string, options?: TCurrencyOptions): TCurrency => {
   let currenctValue = value
   currenctValue = currenctValue.replace(/\D/g, '')
   currenctValue = currenctValue.replace(/(\d)(\d{2})$/, '$1,$2')
@@ -19,7 +32,13 @@ const currencyFn = (value: string): TCurrency => {
 
   const floatValue = parseFloat(parseFloatValue)
 
-  return { floatValue, stringValue: currency(floatValue) }
+  const __options: TCurrencyOptions = {
+    symbol: options?.symbol ?? false,
+    isEmpty: options?.isEmpty ?? true,
+    money: options?.money
+  }
+
+  return { floatValue, stringValue: currency(floatValue, __options) }
 }
 
 export { currencyFn }

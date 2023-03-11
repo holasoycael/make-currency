@@ -1,7 +1,7 @@
-import { TLocale } from '@typings/Locale'
+import { TExchange } from '@typings/Locale'
 
 export type TCurrencyOptions = {
-  addPrefix?: boolean
-  placeholder?: string
-  locale?: TLocale
+  symbol?: boolean
+  isEmpty?: boolean
+  money?: TExchange
 }

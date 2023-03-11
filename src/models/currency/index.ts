@@ -1,30 +1,45 @@
 // modules
-import en from '@locale/en-US'
-export { default as pt } from '@locale/pt-BR'
+import { configure } from '@modules/Configure'
 
 // types and interfaces
 import { TCurrencyProps } from './types'
 
-const defaultValues = {
-  addPrefix: false,
-  placeholder: '',
-  locale: en
-}
-
+/**
+ * Returns a formatted value of currency.
+ *
+ * @example
+ * Here's a simple example:
+ * ```
+ * currency(2.99) // Prints "$2.99":
+ * ```
+ * @param {number} floatValue
+ * @param {object} options - optional
+ * @version 0.0.4
+ * @see https://github.com/holasoycael/make-currency
+ * @returns {string}
+ */
 const currency: TCurrencyProps = (floatValue, options) => {
-  const currentOptions = options ?? defaultValues
-  const addPrefix = currentOptions.addPrefix ?? false
-  const placeholder = currentOptions.placeholder ?? ''
-  const locale = currentOptions.locale ?? en
+  let symbol, isEmpty, money
 
-  const defaultPrice = floatValue.toLocaleString(locale.lang, {
+  if (options === 'INPUT') {
+    symbol = false
+    isEmpty = true
+    money = configure.CURRENT
+  } else {
+    symbol = options?.symbol ?? true
+    isEmpty = options?.isEmpty ?? false
+    money = options?.money ?? configure.CURRENT
+  }
+
+  const defaultPrice = floatValue.toLocaleString(money.lang, {
     style: 'currency',
-    currency: locale.currency
+    currency: money.currency
   })
   const primaryPrice = defaultPrice.replace(/[\u00A0]/g, ' ')
-  const formatValue = locale.removePrefix(primaryPrice)
+  const formatValue = money.removePrefix(primaryPrice)
+  const value = symbol ? primaryPrice : formatValue
 
-  return floatValue ? (addPrefix ? primaryPrice : formatValue) : placeholder
+  return floatValue ? value : isEmpty ? '' : value
 }
 
 export { currency }

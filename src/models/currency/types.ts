@@ -1,6 +1,5 @@
 import { TCurrencyOptions } from '@typings/Models'
 
-export type TCurrencyProps = (
-  floatValue: number,
-  options?: TCurrencyOptions
-) => string
+type TOptions = TCurrencyOptions | 'INPUT'
+
+export type TCurrencyProps = (floatValue: number, options?: TOptions) => string
