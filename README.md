@@ -5,20 +5,27 @@
 Work with price values in JavaScript in a simplified way.\
 Support for USD and BRL
 
-## Install
+## Installing
+Using npm:
 ```sh
 npm install make-currency
 ```
-or
+Using yarn:
 ```sh
 yarn add make-currency
 ```
+Using jsDelivr CDN:
+```html
+<script src="https://cdn.jsdelivr.net/npm/make-currency/dist/make.min.js"></script>
+```
+Using unpkg CDN:
+```html
+<script src="https://unpkg.com/make-currency/dist/make.min.js"></script>
+```
 
-## Usage with VanillaJS
-[Code example](https://stackblitz.com/edit/vanillajs-make-currency) || [Live preview](https://vanillajs-make-currency.stackblitz.io/)
-
-## Usage with JSX
-[Code example](https://stackblitz.com/edit/react-make-currency) || [Live preview](https://react-make-currency.stackblitz.io/)
+## Usage
+Vanilla JS: [Code example](https://stackblitz.com/edit/vanillajs-make-currency) || [Live preview](https://vanillajs-make-currency.stackblitz.io/)\
+React: [Code example](https://stackblitz.com/edit/react-make-currency) || [Live preview](https://react-make-currency.stackblitz.io/)
 
 ## Display currency values
 In the current version BRL for `floatValue` or `stringValue`
