@@ -15,73 +15,10 @@ yarn add make-currency
 ```
 
 ## Usage with VanillaJS
-```js
-const BRL = Make.TYPES.BRL;
-Make.CONFIGURE({ money: BRL });
-
-(() => {
-  const app = document.querySelector('#app')
-  const useMoney = 2.99
-
-  app.innerHTML = `
-    <div class="card">
-      <span class="card__price">
-        ${Make.currency(useMoney)}
-      </span>
-      <input
-        class="card__input"
-        type="tel"
-        name="price"
-        value="${Make.currency(useMoney, 'INPUT')}"
-        placeholder="0,00"
-      />
-    </div>
-  `
-})()
-
-const card__input = document.querySelector('[name="price"]')
-const card__price = document.querySelector('.card__price')
-card__input.addEventListener('input', function(e) {
-  const currentTarget = e.target
-  const { floatValue, stringValue } = Make.currencyFn(currentTarget.value)
-  card__price.textContent = Make.currency(floatValue)
-  currentTarget.value = stringValue
-})
-```
+[Code example](https://stackblitz.com/edit/vanillajs-make-currency) || [Live preview](https://vanillajs-make-currency.stackblitz.io/)
 
 ## Usage with JSX
-```tsx
-import { useState } from 'react'
-import Make, { currency, currencyFn } from 'make-currency'
-
-// types and interfaces
-import { CurrencyProps } from 'make-currency'
-
-const BRL = Make.TYPES.BRL
-Make.CONFIGURE({ money: BRL })
-
-function App() {
-  const [value, setValue] = useState(2.99)
-
-  const inputFn = ({ floatValue }: CurrencyProps) => setValue(floatValue)
-
-  return (
-    <div>
-      <span>
-        {currency(value)}
-      </span>
-      <input
-        type="tel"
-        value={currency(value, 'INPUT')}
-        onChange={(e) => inputFn(currencyFn(e.currentTarget.value))}
-        placeholder="0,00"
-      />
-    </div>
-  )
-}
-
-export default App
-```
+[Code example](https://stackblitz.com/edit/react-make-currency) || [Live preview](https://react-make-currency.stackblitz.io/)
 
 ## Display currency values
 In the current version BRL for `floatValue` or `stringValue`
