@@ -4,6 +4,19 @@ import { configure } from '@modules/Configure'
 // types and interfaces
 import { TCurrencyProps } from './types'
 
+function convert(numero: number) {
+  const partes = numero.toString().split('.')
+  let numeroFormatado = partes[0]
+
+  if (partes[1]) {
+    numeroFormatado += '.' + partes[1].substring(0, 2)
+  } else {
+    numeroFormatado += '.00'
+  }
+
+  return numeroFormatado
+}
+
 /**
  * Returns a formatted value of currency.
  *
@@ -31,7 +44,8 @@ const currency: TCurrencyProps = (floatValue, options) => {
     money = options?.money ?? configure.CURRENT
   }
 
-  const defaultPrice = floatValue.toLocaleString(money.lang, {
+  const current = parseFloat(convert(floatValue))
+  const defaultPrice = current.toLocaleString(money.lang, {
     style: 'currency',
     currency: money.currency
   })

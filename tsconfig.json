@@ -4,6 +4,7 @@
     "module": "ESNext",
     "outDir": "./lib",
     "strict": true,
+    "jsx": "react-jsx",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
@@ -14,6 +15,7 @@
     "typeRoots": ["./node_modules/@types"],
     "baseUrl": ".",
     "paths": {
+      "@helpers/*": ["./src/helpers/*"],
       "@models/*": ["./src/models/*"],
       "@modules/*": ["./src/modules/*"],
       "@utils/*": ["./src/utils/*"],

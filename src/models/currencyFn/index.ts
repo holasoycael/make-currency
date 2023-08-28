@@ -18,18 +18,18 @@ import { TCurrencyOptions } from '@typings/Models'
  * @returns {string}
  */
 const currencyFn = (value: string, options?: TCurrencyOptions): TCurrency => {
-  let currenctValue = value
+  let currenctValue = value.padStart(3, '0')
   currenctValue = currenctValue.replace(/\D/g, '')
   currenctValue = currenctValue.replace(/(\d)(\d{2})$/, '$1,$2')
   currenctValue = currenctValue.replace(/(?=(\d{3})+(\D))\B/g, '.')
 
-  const [thousand, decimal] = currenctValue.split(',')
+  const [thousand, decimal] = currenctValue
+    .padStart(3, '0')
+    .replace(/(\d)(\d{2})$/, '$1,$2')
+    .split(',')
+
   const parseThousand = thousand.replace(/\D/g, '')
-
-  const parseFloatValue = decimal
-    ? `${parseThousand}.${String(Number(decimal))}`
-    : `0.${parseThousand.length === 1 ? `0${parseThousand}` : parseThousand}`
-
+  const parseFloatValue = `${parseThousand}.${decimal}`
   const floatValue = parseFloat(parseFloatValue)
 
   const __options: TCurrencyOptions = {

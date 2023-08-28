@@ -1,6 +1,13 @@
-# Make Currency
+# `Make Currency`
 
 [![npm](https://img.shields.io/npm/v/make-currency)](https://www.npmjs.com/package/make-currency) [![NPM](https://img.shields.io/npm/l/make-currency)](https://www.npmjs.com/package/make-currency)
+
+
+| Statements                                                                               | Branches                                                                             | Functions                                                                              | Lines                                                                          |
+|------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
+| ![Statements](https://img.shields.io/badge/statements-100%25-brightgreen.svg?style=flat) | ![Branches](https://img.shields.io/badge/branches-100%25-brightgreen.svg?style=flat) | ![Functions](https://img.shields.io/badge/functions-100%25-brightgreen.svg?style=flat) | ![Lines](https://img.shields.io/badge/lines-100%25-brightgreen.svg?style=flat) |
+
+---
 
 Work with price values in JavaScript in a simplified way.\
 Support for USD and BRL
@@ -24,8 +31,8 @@ Using unpkg CDN:
 ```
 
 ## Usage
-Vanilla JS: [Code example](https://stackblitz.com/edit/vanillajs-make-currency) || [Live preview](https://vanillajs-make-currency.stackblitz.io/)\
-React: [Code example](https://stackblitz.com/edit/react-make-currency) || [Live preview](https://react-make-currency.stackblitz.io/)
+* [Vanilla JS](https://stackblitz.com/edit/vanillajs-make-currency) → [Preview](https://vanillajs-make-currency.stackblitz.io/)
+* [React](https://stackblitz.com/edit/react-make-currency) → [Preview](https://react-make-currency.stackblitz.io/)
 
 ## Display currency values
 In the current version BRL for `floatValue` or `stringValue`
@@ -37,12 +44,12 @@ In the current version BRL for `floatValue` or `stringValue`
 | 1          	| 0,01          	| 0.01        	| 0,01          	|
 | 12         	| 0,12          	| 0.12        	| 0,12          	|
 | 123        	| 1,23          	| 1.23        	| 1,23          	|
-| 1234       	| 12,34          	| 0.12        	| 0,12          	|
+| 1234       	| 12,34          	| 12.34        	| 12,34          	|
 | 12345      	| 123,45        	| 123.45      	| 123,45        	|
 | 123456     	| 1.234,56      	| 1234.56     	| 1.234,56      	|
 | 1234567    	| 12.345,67      	| 12345.67    	| 12.345,67      	|
 | 12345678   	| 123.456,78    	| 123456.78   	| 123,456,78    	|
-| 123456789 	| 1.234.567,89 	  | 12345678.90 	| 1.234.567,89  	|
+| 123456789 	| 1.234.567,89 	  | 1234567.89  	| 1.234.567,89  	|
 
 
 ## Announcement
