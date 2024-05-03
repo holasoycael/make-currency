@@ -1,6 +1,6 @@
 type TExchange = {
-  lang: string | 'pt-BR' | 'en-US'
-  currency: string | 'BRL' | 'USD'
+  lang: string | 'pt-BR' | 'en-US' | 'es-ES'
+  currency: string | 'BRL' | 'USD' | 'EUR'
   removePrefix: (value: string) => string
 }
 type TTYPES = {
