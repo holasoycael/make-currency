@@ -2,7 +2,7 @@
 import { TExchange } from '@typings/Locale'
 
 export default {
-  lang: 'en-US',
-  currency: 'USD',
-  removePrefix: (value: string) => value.slice(1)
+  lang: 'pt-PT',
+  currency: 'EUR',
+  removePrefix: (value: string) => value.slice(0, -2)
 } satisfies TExchange

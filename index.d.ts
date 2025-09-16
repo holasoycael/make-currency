@@ -1,11 +1,17 @@
+import { TCurrency, TLanguage } from '@typings/Locale'
+
 type TExchange = {
-  lang: string | 'pt-BR' | 'en-US'
-  currency: string | 'BRL' | 'USD'
+  currency: TCurrency
+  lang: string | TLanguage
   removePrefix: (value: string) => string
 }
 type TTYPES = {
-  USD: TExchange
   BRL: TExchange
+  USD: TExchange
+  EUR: TExchange
+  JPY: TExchange
+  MXN: TExchange
+  RUB: TExchange
 }
 export const TYPES: TTYPES
 export type TCurrencyOptions = {

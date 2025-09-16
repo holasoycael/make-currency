@@ -5,7 +5,7 @@ import USD from '@TYPES/USD'
 import { TExchange } from '@typings/Locale'
 
 class Configure {
-  CURRENT = USD
+  CURRENT: TExchange = USD
   setMoney(money: TExchange) {
     this.CURRENT = money
   }

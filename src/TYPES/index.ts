@@ -1,2 +1,7 @@
 export { default as USD } from '@TYPES/USD'
 export { default as BRL } from '@TYPES/BRL'
+export { default as EUR } from '@TYPES/EUR'
+export { default as JPY } from '@TYPES/JPY'
+export { default as MXN } from '@TYPES/MXN'
+export { default as RUB } from '@TYPES/RUB'
+export { default as GBP } from '@TYPES/GBP'
