@@ -12,6 +12,7 @@ type TTYPES = {
   JPY: TExchange
   MXN: TExchange
   RUB: TExchange
+  GBP: TExchange
 }
 export const TYPES: TTYPES
 export type TCurrencyOptions = {
