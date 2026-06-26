@@ -1,0 +1,63 @@
+# make-currency
+
+Lightweight, zero-dependency, high-performance library for formatting, displaying, and parsing 139 currencies with locale-aware support powered by `Intl.NumberFormat`.
+
+## Install
+
+```bash
+npm install make-currency
+```
+
+## API Reference
+
+### 1. `currency(floatValue: number, options?: TCurrencyOptions | 'INPUT'): string`
+Formats a float number into a formatted currency string.
+
+- **`symbol?: boolean`** (default: `true`): Include the currency symbol.
+- **`isEmpty?: boolean`** (default: `true`): If `true`, returns `""` when `floatValue` is `0`. If `false`, returns `0` formatted.
+- **`money?: TExchange`**: The currency configuration (from `TYPES`). Defaults to `TYPES.USD`.
+- **`'INPUT'`**: Shortcut option that formats the value specifically for input fields (removes symbol, formats separator).
+
+#### Examples:
+```ts
+import { currency, TYPES } from 'make-currency'
+
+currency(1234.56) // "$1,234.56" (default USD)
+currency(1234.56, { money: TYPES.BRL }) // "R$ 1.234,56"
+currency(1234.56, { symbol: false, money: TYPES.EUR }) // "1.234,56"
+currency(0, { isEmpty: true }) // ""
+currency(0, { isEmpty: false }) // "$0.00"
+currency(1234.56, 'INPUT') // "1234,56" (depending on active config)
+```
+
+### 2. `currencyFn(value: string, options?: TCurrencyOptions): ICurrencyProps`
+Parses a string containing formatted currency digits and returns both the parsed float value and the fully formatted string representation.
+
+Returns: `{ floatValue: number, stringValue: string }`
+
+#### Examples:
+```ts
+import { currencyFn, TYPES } from 'make-currency'
+
+currencyFn('29,99') 
+// Returns: { floatValue: 29.99, stringValue: '$29.99' }
+
+currencyFn('R$ 1.234,56', { money: TYPES.BRL }) 
+// Returns: { floatValue: 1234.56, stringValue: 'R$ 1.234,56' }
+```
+
+### 3. `CONFIGURE({ money: TExchange }): void`
+Sets the global default currency config for formatting and parsing.
+
+#### Examples:
+```ts
+import { CONFIGURE, currency, TYPES } from 'make-currency'
+
+CONFIGURE({ money: TYPES.BRL })
+currency(10.5) // "R$ 10,50" (now uses BRL by default)
+```
+
+### 4. `TYPES`
+Object containing configurations for all 139 supported currencies. Access them using their ISO 4217 code in uppercase:
+- `TYPES.USD`, `TYPES.BRL`, `TYPES.EUR`, `TYPES.GBP`, `TYPES.JPY`, `TYPES.CAD`, `TYPES.AUD`, `TYPES.CHF`, `TYPES.RUB`, etc.
+Every configuration satisfies the `TExchange` interface.

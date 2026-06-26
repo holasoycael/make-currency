@@ -3,15 +3,15 @@ import { useState } from 'react'
 // models
 import { currency } from '@models/currency'
 import { currencyFn } from '@models/currencyFn'
-import { CurrencyProps } from 'index'
 
 // types and interfaces
+import { ICurrencyProps } from '@models/currencyFn/types'
 import { AppProps } from './types'
 
 function App({ current }: AppProps) {
   const [value, setValue] = useState(current)
 
-  const inputFn = ({ floatValue }: CurrencyProps) => setValue(floatValue)
+  const inputFn = ({ floatValue }: ICurrencyProps) => setValue(floatValue)
 
   return (
     <div>

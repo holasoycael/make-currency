@@ -26,20 +26,16 @@ const files = [
     }
   },
   {
-    fileInput: './CHANGELOG.md',
-    fileOutput: './lib/CHANGELOG.md'
-  },
-  {
-    fileInput: './CONTRIBUTING.md',
-    fileOutput: './lib/CONTRIBUTING.md'
-  },
-  {
     fileInput: './LICENSE.md',
     fileOutput: './lib/LICENSE.md'
   },
   {
     fileInput: './README.md',
     fileOutput: './lib/README.md'
+  },
+  {
+    fileInput: './llms.txt',
+    fileOutput: './lib/llms.txt'
   },
   {
     fileInput: './index.d.ts',

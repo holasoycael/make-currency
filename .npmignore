@@ -1,10 +1,9 @@
 **/*
 !/dist/**
-!CHANGELOG.md
-!CONTRIBUTING.md
 !index.d.ts
 !index.js
 !index.js.map
 !LICENSE.md
+!llms.txt
 !package.json
 !README.md

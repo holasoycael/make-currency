@@ -50,7 +50,9 @@ const currency: TCurrencyProps = (floatValue, options) => {
   const defaultPrice = new Intl.NumberFormat(money.lang, {
     style: 'currency',
     currency: money.currency,
-    useGrouping: true
+    useGrouping: true,
+    minimumFractionDigits: 2, // força exibir 2 casas decimais
+    maximumFractionDigits: 2 // limita a 2 casas decimais
   }).format(current)
   const primaryPrice = replaceSymbolFn(defaultPrice.replace(/[\u00A0]/g, ' '))
   const formatValue = money.removePrefix(primaryPrice)

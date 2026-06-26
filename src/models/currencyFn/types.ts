@@ -1,4 +1,4 @@
-export interface TCurrency {
+export interface ICurrencyProps {
   floatValue: number
   stringValue: string
 }

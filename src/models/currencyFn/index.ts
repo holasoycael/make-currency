@@ -2,7 +2,7 @@
 import { currency } from '@models/currency'
 
 // types and interfaces
-import { TCurrency } from './types'
+import { ICurrencyProps } from './types'
 import { TCurrencyOptions } from '@typings/Models'
 
 /**
@@ -17,7 +17,10 @@ import { TCurrencyOptions } from '@typings/Models'
  * @param {object} options
  * @returns {string}
  */
-const currencyFn = (value: string, options?: TCurrencyOptions): TCurrency => {
+const currencyFn = (
+  value: string,
+  options?: TCurrencyOptions
+): ICurrencyProps => {
   let currenctValue = value.padStart(3, '0')
   currenctValue = currenctValue.replace(/\D/g, '')
   currenctValue = currenctValue.replace(/(\d)(\d{2})$/, '$1,$2')

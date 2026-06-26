@@ -8,7 +8,7 @@ import { currencyFn } from '@models/currencyFn'
 import { configure } from '@modules/Configure'
 
 // types and interfaces
-export type { TCurrency } from '@models/currencyFn/types'
+export type { ICurrencyProps } from '@models/currencyFn/types'
 import type { CONFIGUREProps } from '@typings/Make'
 
 const CONFIGURE = ({ money }: CONFIGUREProps) => {
