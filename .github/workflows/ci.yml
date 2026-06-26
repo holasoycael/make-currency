@@ -6,6 +6,7 @@ on:
       - main
 
 env:
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
   COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
 
 jobs:
