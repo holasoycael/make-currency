@@ -27,13 +27,13 @@ jobs:
         node-version: 18.20.8
 
     - name: Install dependecies
-      run: yarn
+      run: npm install
 
     - name: Check tests
-      run: yarn test
+      run: npm run test
 
     - name: Check liting
-      run: yarn lint
+      run: npm run lint
 
     - name: Coveralls
       uses: coverallsapp/github-action@v2
