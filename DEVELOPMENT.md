@@ -7,7 +7,7 @@ This guide provides instructions on how to set up, run, test, and build the **ma
 ## 1. Getting Started
 
 ### Prerequisites
-- **Node.js**: Version **18** is specifically used and recommended for developing and running this project.
+- **Node.js**: Version **24.14.1** is specifically used and recommended for developing and running this project.
 - **npm**: Standard Node package manager.
 
 ### Installation

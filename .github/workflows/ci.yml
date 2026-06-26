@@ -6,7 +6,6 @@ on:
       - main
 
 env:
-  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
   COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
 
 jobs:
@@ -25,7 +24,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: 18.20.8
+        node-version: 24.14.1
 
     - name: Install dependecies
       run: npm install

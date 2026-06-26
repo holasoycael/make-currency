@@ -3,7 +3,7 @@
 ### Changed
 - Replaced all repository and workflow commands to use `npm` instead of `yarn`.
 - Updated pre-commit hooks and package scripts to use `npm run`.
-- Specified Node.js v18 as the development environment standard.
+- Specified Node.js v24 as the development environment standard.
 
 ### Added
 - Created `DEVELOPMENT.md` guide with local setup, running, and testing instructions.
