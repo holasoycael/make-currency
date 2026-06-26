@@ -1,14 +1,7 @@
 # `Make Currency`
 
-[![npm](https://img.shields.io/npm/v/make-currency)](https://www.npmjs.com/package/make-currency) [![NPM](https://img.shields.io/npm/l/make-currency)](https://www.npmjs.com/package/make-currency)
-
-
-| Statements                                                                               | Branches                                                                             | Functions                                                                              | Lines                                                                          |
-|------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
-| ![Statements](https://img.shields.io/badge/statements-100%25-brightgreen.svg?style=flat) | ![Branches](https://img.shields.io/badge/branches-100%25-brightgreen.svg?style=flat) | ![Functions](https://img.shields.io/badge/functions-100%25-brightgreen.svg?style=flat) | ![Lines](https://img.shields.io/badge/lines-100%25-brightgreen.svg?style=flat) |
-
+[![npm](https://img.shields.io/npm/v/make-currency)](https://www.npmjs.com/package/make-currency) [![NPM](https://img.shields.io/npm/l/make-currency)](https://www.npmjs.com/package/make-currency) [![Coverage Status](https://coveralls.io/repos/github/holasoycael/make-currency/badge.svg?branch=main)](https://coveralls.io/github/holasoycael/make-currency?branch=main) [![gzip size](https://img.badgesize.io/https://unpkg.com/make-currency/dist/make.min.js?compression=gzip)](https://unpkg.com/make-currency/dist/make.min.js)
 ---
-
 Format, display and parse monetary values in JavaScript with support for **139 currencies** and locale-aware formatting powered by `Intl.NumberFormat`.
 
 ## Installing
