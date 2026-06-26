@@ -193,6 +193,7 @@ export type TLanguage =
   | 'es-HN' // HNL - Honduras
   | 'hr-HR' // HRK - Croácia
   | 'ht-HT' // HTG - Haiti (crioulo haitiano)
+  | 'en-HT' // HTG - Haiti (inglês)
   | 'hu-HU' // HUF - Hungria
   | 'hi-IN' // INR - Índia
   | 'id-ID' // IDR - Indonésia
