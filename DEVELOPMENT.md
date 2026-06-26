@@ -78,3 +78,33 @@ This project has Git hooks configured with **Husky** and **Lint-staged** to ensu
   - `src/models/` — Core business logic, formatting algorithms, and parser structures.
   - `src/typings/` — Internal TypeScript types and interfaces.
   - `src/index.ts` — Main entrypoint of the source code.
+
+---
+
+## 5. Publishing
+
+To publish the package to npm, you must build the project first and then publish from the `/lib` directory, as all compiled bundles are generated there:
+
+```bash
+# 1. Build the production bundles
+npm run build
+
+# 2. Publish from the build directory
+npm publish ./lib
+```
+
+Publishing from the root directory will fail to include the compiled JavaScript files because they are excluded by the root `.npmignore` rules.
+
+### Dry-run Verification
+
+Before publishing, it is highly recommended to verify the package contents to ensure all required files are present. This is a standard best practice for package maintainers:
+
+```bash
+# 1. Navigate to the build directory
+cd lib
+
+# 2. Run npm pack with --dry-run to list all files that will be packaged
+npm pack --dry-run
+```
+
+Review the output file list to confirm that `index.js`, `index.js.map`, `dist/make.min.js`, and other assets are correctly listed. If everything is correct, you are ready to publish.
