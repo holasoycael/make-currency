@@ -105,7 +105,7 @@ When the locale produces invisible Unicode control characters (e.g. RTL mark `\u
 
 ```ts
 // AED (ar-AE) — RTL mark is embedded in the formatted value
-removePrefix: (value: string) =>
+;(value: string) =>
   value
     .slice(0, -4)
     .replace(/\u200F/g, '')

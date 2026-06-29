@@ -1,0 +1,8 @@
+import Make, { currency } from 'make-currency'
+
+// Set the global default currency
+Make.CONFIGURE({ money: Make.TYPES.{{money}} })
+
+// Formatting calls will automatically use the global default
+currency(1234.56)                     // "{{basic}}"
+currency(1234.56, { symbol: false })  // "{{noSymbol}}"

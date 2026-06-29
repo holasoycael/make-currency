@@ -1,0 +1,500 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="API Reference" />
+
+<style>
+  {`
+    .api-container {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    .api-header {
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      border-radius: 16px;
+      padding: 40px 36px;
+      margin-bottom: 40px;
+      color: #fff;
+    }
+    .api-header h1 {
+      color: #fff;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin: 0 0 8px;
+    }
+    .api-header p {
+      font-size: 1rem;
+      color: #a0aec0;
+      margin: 0;
+    }
+    .api-fn {
+      margin-bottom: 48px;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .api-fn-header {
+      padding: 20px 24px;
+      background: #f7fafc;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .api-fn-header h2 {
+      margin: 0 0 4px;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .api-fn-header p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: #718096;
+    }
+    .api-fn-body {
+      padding: 24px;
+    }
+    .api-fn-body h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 24px 0 12px;
+      color: #2d3748;
+    }
+    .api-fn-body h3:first-child {
+      margin-top: 0;
+    }
+    .api-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 0.88rem;
+    }
+    .api-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: #f7fafc;
+      border-bottom: 2px solid #e2e8f0;
+      font-weight: 600;
+      color: #4a5568;
+      font-size: 0.82rem;
+    }
+    .api-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #edf2f7;
+      color: #2d3748;
+      vertical-align: top;
+    }
+    .api-table code {
+      background: #edf2f7;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      color: #805ad5;
+    }
+    .api-note {
+      background: linear-gradient(135deg, #ebf4ff, #e9d8fd);
+      border-left: 4px solid #805ad5;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 0.88rem;
+      color: #44337a;
+    }
+    .api-note strong {
+      color: #553c9a;
+    }
+    .api-warning {
+      background: linear-gradient(135deg, #fffbeb, #fef3c7);
+      border-left: 4px solid #d69e2e;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 0.88rem;
+      color: #744210;
+    }
+    .api-type-card {
+      background: #1a202c;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 12px 0;
+    }
+    .api-type-card code {
+      color: #68d391;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      font-family: 'Fira Code', 'Consolas', monospace;
+    }
+    .api-exchange-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 8px;
+      margin: 12px 0;
+    }
+    .api-exchange-item {
+      background: #f7fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.82rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .api-exchange-item strong {
+      color: #805ad5;
+    }
+    .api-exchange-item span {
+      color: #718096;
+    }
+  `}
+</style>
+
+<div className="api-container">
+<div className="api-header">
+  <h1>📖 API Reference</h1>
+  <p>Complete documentation of all functions, types, and configuration options</p>
+</div>
+<div className="api-fn">
+  <div className="api-fn-header">
+    <h2>currency(floatValue, options?)</h2>
+    <p>Formats a numeric value into a locale-aware currency string</p>
+  </div>
+  <div className="api-fn-body">
+### Signature
+```ts
+function currency(floatValue: number, options?: TCurrencyOptions | 'INPUT'): string
+```
+### Parameters
+<table className="api-table">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>floatValue</code></td>
+      <td><code>number</code></td>
+      <td>Yes</td>
+      <td>The numeric value to format</td>
+    </tr>
+    <tr>
+      <td><code>options</code></td>
+      <td><code>TCurrencyOptions | 'INPUT'</code></td>
+      <td>No</td>
+      <td>Formatting options or <code>'INPUT'</code> shortcut</td>
+    </tr>
+  </tbody>
+</table>
+### Options (TCurrencyOptions)
+<table className="api-table">
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>symbol</code></td>
+      <td><code>boolean</code></td>
+      <td><code>true</code></td>
+      <td>Include the currency symbol in the output</td>
+    </tr>
+    <tr>
+      <td><code>isEmpty</code></td>
+      <td><code>boolean</code></td>
+      <td><code>false</code></td>
+      <td>Return <code>""</code> when the value is <code>0</code></td>
+    </tr>
+    <tr>
+      <td><code>money</code></td>
+      <td><code>TExchange</code></td>
+      <td><code>TYPES.USD</code></td>
+      <td>Currency configuration (locale + code + transforms)</td>
+    </tr>
+  </tbody>
+</table>
+### Returns
+`string` — The formatted currency string.
+### Examples
+```ts
+import { currency, TYPES } from 'make-currency'
+// Default (USD)
+currency(1234.56)                                      // "$1,234.56"
+// Without symbol
+currency(1234.56, { symbol: false })                   // "1,234.56"
+// With a specific currency
+currency(1234.56, { money: TYPES.BRL })                // "R$ 1.234,56"
+currency(1234.56, { symbol: false, money: TYPES.BRL }) // "1.234,56"
+// Empty string when value is zero
+currency(0, { isEmpty: true })                         // ""
+currency(0, { isEmpty: false })                        // "$0.00"
+// INPUT shortcut — symbol: false, isEmpty: true, uses global currency
+currency(1234.56, 'INPUT')                             // "1,234.56"
+```
+<div className="api-note">
+  <strong>💡 'INPUT' shortcut:</strong> Pass <code>'INPUT'</code> as options to use the global currency (set via <code>CONFIGURE</code>) with <code>symbol: false</code> and <code>isEmpty: true</code>. Ideal for controlled input components.
+</div>
+  </div>
+</div>
+<div className="api-fn">
+  <div className="api-fn-header">
+    <h2>currencyFn(value, options?)</h2>
+    <p>Parses a formatted currency string and returns both numeric and formatted representations</p>
+  </div>
+  <div className="api-fn-body">
+### Signature
+```ts
+function currencyFn(value: string, options?: TCurrencyOptions): ICurrencyProps
+```
+### Parameters
+<table className="api-table">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>value</code></td>
+      <td><code>string</code></td>
+      <td>Yes</td>
+      <td>The raw string input (digits only, e.g. from an input field)</td>
+    </tr>
+    <tr>
+      <td><code>options</code></td>
+      <td><code>TCurrencyOptions</code></td>
+      <td>No</td>
+      <td>Same options as <code>currency()</code>. Defaults: <code>symbol: false</code>, <code>isEmpty: true</code></td>
+    </tr>
+  </tbody>
+</table>
+### Return Type (ICurrencyProps)
+```ts
+interface ICurrencyProps {
+  floatValue: number   // The numeric value (e.g. 1234.56)
+  stringValue: string  // The formatted string without symbol (e.g. '1,234.56')
+}
+```
+### Examples
+```ts
+import { currencyFn, TYPES } from 'make-currency'
+currencyFn('123456')
+// { floatValue: 1234.56, stringValue: '1,234.56' }
+currencyFn('1')
+// { floatValue: 0.01, stringValue: '0.01' }
+currencyFn('')
+// { floatValue: 0, stringValue: '' }
+// With BRL
+currencyFn('123456', { money: TYPES.BRL })
+// { floatValue: 1234.56, stringValue: '1.234,56' }
+```
+### Digit-to-Value Mapping (BRL example)
+<table className="api-table">
+  <thead>
+    <tr>
+      <th>Typed</th>
+      <th>Input Value</th>
+      <th>floatValue</th>
+      <th>stringValue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td></td><td>0,00</td><td>0.00</td><td>0,00</td></tr>
+    <tr><td>1</td><td>0,01</td><td>0.01</td><td>0,01</td></tr>
+    <tr><td>12</td><td>0,12</td><td>0.12</td><td>0,12</td></tr>
+    <tr><td>123</td><td>1,23</td><td>1.23</td><td>1,23</td></tr>
+    <tr><td>1234</td><td>12,34</td><td>12.34</td><td>12,34</td></tr>
+    <tr><td>12345</td><td>123,45</td><td>123.45</td><td>123,45</td></tr>
+    <tr><td>123456</td><td>1.234,56</td><td>1234.56</td><td>1.234,56</td></tr>
+    <tr><td>1234567</td><td>12.345,67</td><td>12345.67</td><td>12.345,67</td></tr>
+    <tr><td>12345678</td><td>123.456,78</td><td>123456.78</td><td>123.456,78</td></tr>
+    <tr><td>123456789</td><td>1.234.567,89</td><td>1234567.89</td><td>1.234.567,89</td></tr>
+  </tbody>
+</table>
+  </div>
+</div>
+<div className="api-fn">
+  <div className="api-fn-header">
+    <h2>{'CONFIGURE({ money })'}</h2>
+    <p>Sets the global default currency for all formatting and parsing functions</p>
+  </div>
+  <div className="api-fn-body">
+### Signature
+```ts
+function CONFIGURE({ money }: CONFIGUREProps): void
+```
+### Parameters
+<table className="api-table">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>money</code></td>
+      <td><code>TExchange</code></td>
+      <td>Yes</td>
+      <td>The currency configuration to set as global default</td>
+    </tr>
+  </tbody>
+</table>
+### Example
+```ts
+import { CONFIGURE, TYPES, currency, currencyFn } from 'make-currency'
+// Set BRL as the global currency
+CONFIGURE({ money: TYPES.BRL })
+// Now all calls without `money` use BRL
+currency(1234.56)          // "R$ 1.234,56"
+currencyFn('123456')       // { floatValue: 1234.56, stringValue: '1.234,56' }
+// You can still override per-call
+currency(1234.56, { money: TYPES.USD }) // "$1,234.56"
+```
+<div className="api-warning">
+  <strong>⚠️ Important:</strong> <code>CONFIGURE</code> sets a global singleton state. In SSR or multi-tenant environments, be careful with global state as it persists across requests.
+</div>
+<div className="api-note">
+  <strong>💡 Default:</strong> If <code>CONFIGURE</code> is never called, the global default is <code>TYPES.USD</code> (US Dollar).
+</div>
+  </div>
+</div>
+<div className="api-fn">
+  <div className="api-fn-header">
+    <h2>TYPES</h2>
+    <p>Object containing all 139 currency configurations keyed by ISO 4217 code</p>
+  </div>
+  <div className="api-fn-body">
+### TExchange Structure
+Each currency in `TYPES` follows the `TExchange` interface:
+```ts
+type TExchange = {
+  lang: TLanguage           // Locale string (e.g. 'pt-BR', 'en-US')
+  currency: TCurrency       // ISO 4217 code (e.g. 'BRL', 'USD')
+  removePrefix: (value: string) => string  // Removes the symbol from formatted output
+  replaceSymbol?: (value: string) => string // Optional custom symbol replacement
+}
+```
+### Usage
+```ts
+import { TYPES } from 'make-currency'
+TYPES.USD  // { lang: 'en-US', currency: 'USD', removePrefix: ... }
+TYPES.BRL  // { lang: 'pt-BR', currency: 'BRL', removePrefix: ... }
+TYPES.EUR  // { lang: 'pt-PT', currency: 'EUR', removePrefix: ... }
+TYPES.JPY  // { lang: 'en-US', currency: 'USD', removePrefix: ..., replaceSymbol: ... }
+```
+### Popular Currencies
+<div className="api-exchange-grid">
+  <div className="api-exchange-item"><strong>USD</strong> <span>🇺🇸 $</span></div>
+  <div className="api-exchange-item"><strong>BRL</strong> <span>🇧🇷 R$</span></div>
+  <div className="api-exchange-item"><strong>EUR</strong> <span>🇪🇺 €</span></div>
+  <div className="api-exchange-item"><strong>GBP</strong> <span>🇬🇧 £</span></div>
+  <div className="api-exchange-item"><strong>JPY</strong> <span>🇯🇵 ¥</span></div>
+  <div className="api-exchange-item"><strong>CAD</strong> <span>🇨🇦 $</span></div>
+  <div className="api-exchange-item"><strong>AUD</strong> <span>🇦🇺 $</span></div>
+  <div className="api-exchange-item"><strong>CHF</strong> <span>🇨🇭 Fr.</span></div>
+  <div className="api-exchange-item"><strong>CNY</strong> <span>🇨🇳 ¥</span></div>
+  <div className="api-exchange-item"><strong>INR</strong> <span>🇮🇳 ₹</span></div>
+  <div className="api-exchange-item"><strong>MXN</strong> <span>🇲🇽 $</span></div>
+  <div className="api-exchange-item"><strong>KRW</strong> <span>🇰🇷 ₩</span></div>
+  <div className="api-exchange-item"><strong>TRY</strong> <span>🇹🇷 ₺</span></div>
+  <div className="api-exchange-item"><strong>RUB</strong> <span>🇷🇺 ₽</span></div>
+  <div className="api-exchange-item"><strong>PLN</strong> <span>🇵🇱 zł</span></div>
+  <div className="api-exchange-item"><strong>THB</strong> <span>🇹🇭 ฿</span></div>
+  <div className="api-exchange-item"><strong>ZAR</strong> <span>🇿🇦 R</span></div>
+  <div className="api-exchange-item"><strong>SGD</strong> <span>🇸🇬 $</span></div>
+  <div className="api-exchange-item"><strong>COP</strong> <span>🇨🇴 $</span></div>
+  <div className="api-exchange-item"><strong>ARS</strong> <span>🇦🇷 $</span></div>
+</div>
+<div className="api-note">
+  <strong>💡 Full list:</strong> The library supports <strong>139 currencies</strong>. See the README for the complete table with ISO codes, symbols, currency names, and locales.
+</div>
+  </div>
+</div>
+<div className="api-fn">
+  <div className="api-fn-header">
+    <h2>TypeScript Types</h2>
+    <p>All exported types and interfaces for full type safety</p>
+  </div>
+  <div className="api-fn-body">
+### Exported Types
+<table className="api-table">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Kind</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>TCurrency</code></td>
+      <td>Union</td>
+      <td>All 139 ISO 4217 currency codes</td>
+    </tr>
+    <tr>
+      <td><code>TLanguage</code></td>
+      <td>Union</td>
+      <td>All supported locale strings</td>
+    </tr>
+    <tr>
+      <td><code>TExchange</code></td>
+      <td>Type</td>
+      <td>Currency configuration object</td>
+    </tr>
+    <tr>
+      <td><code>TTYPES</code></td>
+      <td>Type</td>
+      <td>Map of all currency codes to their <code>TExchange</code></td>
+    </tr>
+    <tr>
+      <td><code>TCurrencyOptions</code></td>
+      <td>Type</td>
+      <td>Options for <code>currency()</code> and <code>currencyFn()</code></td>
+    </tr>
+    <tr>
+      <td><code>TOptions</code></td>
+      <td>Type</td>
+      <td><code>TCurrencyOptions | 'INPUT'</code></td>
+    </tr>
+    <tr>
+      <td><code>TCurrencyProps</code></td>
+      <td>Type</td>
+      <td>Function signature for <code>currency()</code></td>
+    </tr>
+    <tr>
+      <td><code>ICurrencyProps</code></td>
+      <td>Interface</td>
+      <td>Return type of <code>currencyFn()</code></td>
+    </tr>
+    <tr>
+      <td><code>CONFIGUREProps</code></td>
+      <td>Type</td>
+      <td>Parameter type for <code>CONFIGURE()</code></td>
+    </tr>
+  </tbody>
+</table>
+### Usage Example
+```ts
+import type { TCurrency, TExchange, ICurrencyProps } from 'make-currency'
+const code: TCurrency = 'BRL'
+const customExchange: TExchange = {
+  lang: 'pt-BR',
+  currency: 'BRL',
+  removePrefix: (value: string) => value.slice(3),
+}
+const result: ICurrencyProps = {
+  floatValue: 1234.56,
+  stringValue: '1.234,56',
+}
+```
+  </div>
+</div>
+</div>

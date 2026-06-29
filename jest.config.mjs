@@ -1,7 +1,7 @@
-/** @returns {Promise<import('jest').Config>} */
-module.exports = {
+/** @type {import('jest').Config} */
+export default {
   testEnvironment: 'jsdom',
-  testPathIgnorePatterns: ['/node_modules/', '<rootDir>/lib/'],
+  roots: ['<rootDir>/src'],
   collectCoverage: true,
   collectCoverageFrom: [
     'src/**/*.ts(x)?',

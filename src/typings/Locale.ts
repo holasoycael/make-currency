@@ -213,8 +213,7 @@ export type TLanguage =
   | 'zu-ZA' // ZAR - África do Sul (zulu)
 
 export type TExchange = {
-  // eslint-disable-next-line prettier/prettier
-  lang: TLanguage
+  lang: string | TLanguage
   currency: TCurrency
   removePrefix: (value: string) => string
   replaceSymbol?: (value: string) => string

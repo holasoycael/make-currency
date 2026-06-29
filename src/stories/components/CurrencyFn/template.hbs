@@ -1,0 +1,20 @@
+import { useState } from 'react'
+import Make, { currency, currencyFn } from 'make-currency'
+
+// types and interfaces
+import type { ICurrencyProps } from 'make-currency'
+
+const Demo = () => {
+  const [value, setValue] = useState({{value}})
+
+  const inputFn = ({ floatValue }: ICurrencyProps) => setValue(floatValue)
+
+  return (
+    <input
+      type="text"
+      value={currency(value, 'INPUT')}
+      onChange={(e) => inputFn(currencyFn(e.target.value, { money: Make.TYPES.{{money}} }))}
+      placeholder="0,00"
+    />
+  )
+}

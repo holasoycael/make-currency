@@ -91,7 +91,8 @@ export default async () => {
       output: {
         file: `lib/dist/make.min.js`,
         format: 'umd',
-        name: 'Make'
+        name: 'Make',
+        exports: 'named'
       },
       plugins: [
         typescript({
@@ -109,7 +110,8 @@ export default async () => {
         {
           file: 'lib/index.js',
           format: 'cjs',
-          sourcemap: true
+          sourcemap: true,
+          exports: 'named'
         }
       ],
       plugins: [

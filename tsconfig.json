@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2017",
     "module": "ESNext",
     "outDir": "./lib",
     "strict": true,
@@ -11,9 +11,11 @@
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,
     "declaration": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
+    "skipLibCheck": true,
     "typeRoots": ["./node_modules/@types"],
     "baseUrl": ".",
+    "lib": ["es5"],
     "paths": {
       "@helpers/*": ["./src/helpers/*"],
       "@models/*": ["./src/models/*"],
@@ -24,6 +26,6 @@
     },
     "plugins": [{ "transform": "ts-transform-paths" }]
   },
-  "include": ["src/**/*", "./index.d.ts"],
+  "include": ["src/**/*", "./index.d.ts", "**/*.d.ts"],
   "exclude": ["node_modules", "**/*.test.ts"],
 }

@@ -9,12 +9,17 @@ import { configure } from '@modules/Configure'
 
 // types and interfaces
 export type { ICurrencyProps } from '@models/currencyFn/types'
-import type { CONFIGUREProps } from '@typings/Make'
+import type { CONFIGUREProps, TExportTypes } from '@typings/Make'
 
 const CONFIGURE = ({ money }: CONFIGUREProps) => {
   configure.setMoney(money)
 }
 
-const Make = { currency, currencyFn, TYPES, CONFIGURE }
+const Make = {
+  currency,
+  currencyFn,
+  TYPES: TYPES satisfies TExportTypes,
+  CONFIGURE
+}
 
 export { Make as default, currency, currencyFn, TYPES, CONFIGURE }

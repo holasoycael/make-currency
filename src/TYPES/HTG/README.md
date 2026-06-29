@@ -6,14 +6,14 @@ The **Gourde** is the official currency of Haiti. It was first introduced in 181
 
 ## 📌 General Information
 
-| Property | Detail |
-| :--- | :--- |
-| **Country** | 🇭🇹 Haiti |
-| **Symbol** | `G` |
-| **ISO Code** | `HTG` |
-| **Currency Unit** | Gourde (plural: Gourdes) |
-| **Subunit** | Centime (plural: Centimes; 1 Gourde = 100 Centimes) |
-| **Central Bank** | Bank of the Republic of Haiti |
+| Property          | Detail                                              |
+| :---------------- | :-------------------------------------------------- |
+| **Country**       | 🇭🇹 Haiti                                            |
+| **Symbol**        | `G`                                                 |
+| **ISO Code**      | `HTG`                                               |
+| **Currency Unit** | Gourde (plural: Gourdes)                            |
+| **Subunit**       | Centime (plural: Centimes; 1 Gourde = 100 Centimes) |
+| **Central Bank**  | Bank of the Republic of Haiti                       |
 
 ---
 
@@ -22,6 +22,7 @@ The **Gourde** is the official currency of Haiti. It was first introduced in 181
 The Haitian Gourde is typically formatted using a period (`.`) as the decimal separator and a comma (`,`) as the thousands separator. The currency symbol `G` is placed before the numeric value, separated by a space.
 
 ### Examples
+
 - `G 0.05`
 - `G 1.00`
 - `G 150.75`
@@ -33,6 +34,7 @@ The Haitian Gourde is typically formatted using a period (`.`) as the decimal se
 ## 💵 Monetary Circulation
 
 ### 🪙 Coins (Frequently Used)
+
 - `1 centime`
 - `5 centimes`
 - `10 centimes`
@@ -40,6 +42,7 @@ The Haitian Gourde is typically formatted using a period (`.`) as the decimal se
 - `50 centimes`
 
 ### 💵 Bank notes (Frequently Used)
+
 - `G 10`
 - `G 25`
 - `G 50`
