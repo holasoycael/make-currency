@@ -1,0 +1,4 @@
+import { CONFIGURE, TYPES, currency } from 'make-currency'
+
+CONFIGURE({ money: TYPES.BRL })
+currency(1234.56) // "R$ 1.234,56" — BRL is now the default

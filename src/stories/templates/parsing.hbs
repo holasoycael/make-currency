@@ -1,0 +1,5 @@
+import { currencyFn } from 'make-currency'
+
+currencyFn('123456') // { floatValue: 1234.56, stringValue: '1,234.56' }
+currencyFn('1') // { floatValue: 0.01,    stringValue: '0.01' }
+currencyFn('') // { floatValue: 0,       stringValue: '' }

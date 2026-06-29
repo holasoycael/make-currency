@@ -1,0 +1,6 @@
+import { currency } from 'make-currency'
+
+currency(1234.56) // "$1,234.56"
+currency(1234.56, { symbol: false }) // "1,234.56"
+currency(0, { isEmpty: true }) // ""
+currency(0, { isEmpty: false }) // "$0.00"

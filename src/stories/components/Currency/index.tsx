@@ -39,8 +39,6 @@ const CurrencyComponent = () => {
 
   const dataSymbol = withSymbol.replace(withoutSymbol, '').trim()
 
-  console.log({ withSymbol, withoutSymbol, dataSymbol })
-
   const currentDb = {
     value: value.toString(),
     money: dataType.currency

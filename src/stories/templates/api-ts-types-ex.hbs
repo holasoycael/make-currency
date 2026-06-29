@@ -1,0 +1,13 @@
+import type { TCurrency, TExchange, ICurrencyProps } from 'make-currency'
+
+const code: TCurrency = 'BRL'
+const customExchange: TExchange = {
+  lang: 'pt-BR',
+  currency: 'BRL',
+  removePrefix: (value: string) => value.slice(3),
+}
+
+const result: ICurrencyProps = {
+  floatValue: 1234.56,
+  stringValue: '1.234,56',
+}

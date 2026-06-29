@@ -29,8 +29,7 @@ export default {
           'The `currency()` function formats a numeric value into a locale-aware currency string. Use the controls to change the value, toggle the symbol, toggle isEmpty, and select different currencies.'
       }
     }
-  },
-  tags: ['autodocs']
+  }
 } satisfies Meta<typeof CurrencyComponent>
 
 export const Currency: StoryObj = {

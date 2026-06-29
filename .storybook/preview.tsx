@@ -10,7 +10,7 @@ import type { Preview } from '@storybook/react-webpack5'
 import type { DocsContainerProps } from '@storybook/addon-docs/blocks'
 import type { PropsWithChildren } from 'react'
 
-// global css imports from lib
+// styles
 import 'simplebar-react/dist/simplebar.min.css'
 import '../public/style.css'
 

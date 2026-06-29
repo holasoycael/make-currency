@@ -1,0 +1,11 @@
+import { CONFIGURE, TYPES, currency, currencyFn } from 'make-currency'
+
+// Set BRL as the global currency
+CONFIGURE({ money: TYPES.BRL })
+
+// Now all calls without `money` use BRL
+currency(1234.56) // "R$ 1.234,56"
+currencyFn('123456') // { floatValue: 1234.56, stringValue: '1.234,56' }
+
+// You can still override per-call
+currency(1234.56, { money: TYPES.USD }) // "$1,234.56"

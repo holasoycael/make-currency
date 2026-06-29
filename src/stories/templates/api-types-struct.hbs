@@ -1,0 +1,6 @@
+type TExchange = {
+  lang: TLanguage // Locale string (e.g. 'pt-BR', 'en-US')
+  currency: TCurrency // ISO 4217 code (e.g. 'BRL', 'USD')
+  removePrefix: (value: string) => string // Removes the symbol from formatted output
+  replaceSymbol?: (value: string) => string // Optional custom symbol replacement
+}

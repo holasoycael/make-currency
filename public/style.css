@@ -1,10 +1,6 @@
 @import "tailwindcss";
 @config "../tailwind.config.mjs";
 
-/* Note: You may need to change the path to fit your project structure */
-@source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
-@custom-variant dark (&:is(.dark *));
-
 /*----------- SETTINGS ----------*/
 :root {
   --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
@@ -299,6 +295,11 @@ img {
   background: rgba(0, 0, 0, 0);
 }
 
+.css-1xxktr1 :where(span:not(.sb-anchor, .sb-unstyled, .sb-unstyled span)) {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  margin: inherit;
+}
 
 html,
 body,

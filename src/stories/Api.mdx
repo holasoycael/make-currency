@@ -1,0 +1,165 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+// components JSX
+import {
+  currencyParamsCols,
+  currencyParamsRows,
+  currencyOptionsCols,
+  currencyOptionsRows,
+  currencyFnParamsCols,
+  currencyFnParamsRows,
+  mappingCols,
+  mappingRows,
+  configureParamsCols,
+  configureParamsRows,
+  popularCurrenciesCols,
+  popularCurrenciesRows,
+  typescriptTypesCols,
+  typescriptTypesRows
+} from './components/Table/data'
+import * as Coding from './components/Coding'
+import Table from './components/Table'
+
+<Meta title="API Reference" />
+
+# 📖 API Reference
+
+Complete documentation of all functions, types, and configuration options.
+
+
+## currency(floatValue, options?)
+
+Formats a numeric value into a locale-aware currency string.
+
+### Signature
+
+<Coding.ApiCurrencySig />
+
+###
+
+### Parameters
+
+<Table
+  columns={currencyParamsCols}
+  rows={currencyParamsRows}
+  data-testid="api-currency__table--parameters"
+/>
+
+###
+
+### Options (`TCurrencyOptions`)
+
+<Table
+  columns={currencyOptionsCols}
+  rows={currencyOptionsRows}
+  data-testid="api-currency__table--options"
+/>
+
+### Returns
+
+`string` — The formatted currency string.
+
+### Examples
+
+<Coding.ApiCurrencyEx />
+
+> **💡 'INPUT' shortcut:** Pass `'INPUT'` as options to use the global currency (set via `CONFIGURE`) with `symbol: false` and `isEmpty: true`. Ideal for controlled input components.
+
+## currencyFn(value, options?)
+
+Parses a formatted currency string and returns both numeric and formatted representations.
+
+### Signature
+
+<Coding.ApiCurrencyFnSig />
+
+### Parameters
+
+<Table
+  columns={currencyFnParamsCols}
+  rows={currencyFnParamsRows}
+  data-testid="api-currency-fn__table--parameters"
+/>
+
+### Return Type (`ICurrencyProps`)
+
+<Coding.ApiCurrencyFnRet />
+
+### Examples
+
+<Coding.ApiCurrencyFnEx />
+
+### Digit-to-Value Mapping (BRL example)
+
+<Table
+  columns={mappingCols}
+  rows={mappingRows}
+  data-testid="api-currency-fn__table--mapping"
+/>
+
+## {'CONFIGURE({ money })'}
+
+Sets the global default currency for all formatting and parsing functions.
+
+### Signature
+
+<Coding.ApiConfigureSig />
+
+### Parameters
+
+<Table
+  columns={configureParamsCols}
+  rows={configureParamsRows}
+  data-testid="api-configure__table--parameters"
+/>
+
+### Example
+
+<Coding.ApiConfigureEx />
+
+> **⚠️ Important:** `CONFIGURE` sets a global singleton state. In SSR or multi-tenant environments, be careful with global state as it persists across requests.
+>
+> **💡 Default:** If `CONFIGURE` is never called, the global default is `TYPES.USD` (US Dollar).
+
+---
+
+## TYPES
+
+Object containing all 139 currency configurations keyed by ISO 4217 code.
+
+### `TExchange` Structure
+
+Each currency in `TYPES` follows the `TExchange` interface:
+
+<Coding.ApiTypesStruct />
+
+### Usage
+
+<Coding.ApiTypesUsage />
+
+### Popular Currencies
+
+<Table
+  columns={popularCurrenciesCols}
+  rows={popularCurrenciesRows}
+  data-testid="api-types__table--popular"
+/>
+
+> **💡 Full list:** The library supports **139 currencies**. See the README for the complete table with ISO codes, symbols, currency names, and locales.
+
+---
+
+## TypeScript Types
+
+All exported types and interfaces for full type safety.
+
+### Exported Types
+
+<Table
+  columns={typescriptTypesCols}
+  rows={typescriptTypesRows}
+  data-testid="api-ts-types__table--exported"
+/>
+
+### Usage Example
+
+<Coding.ApiTsTypesEx />

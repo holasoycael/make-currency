@@ -1,0 +1,18 @@
+import { currency, TYPES } from 'make-currency'
+
+// Default (USD)
+currency(1234.56) // "$1,234.56"
+
+// Without symbol
+currency(1234.56, { symbol: false }) // "1,234.56"
+
+// With a specific currency
+currency(1234.56, { money: TYPES.BRL }) // "R$ 1.234,56"
+currency(1234.56, { symbol: false, money: TYPES.BRL }) // "1.234,56"
+
+// Empty string when value is zero
+currency(0, { isEmpty: true }) // ""
+currency(0, { isEmpty: false }) // "$0.00"
+
+// INPUT shortcut — symbol: false, isEmpty: true, uses global currency
+currency(1234.56, 'INPUT') // "1,234.56"

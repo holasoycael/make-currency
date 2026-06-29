@@ -1,0 +1,6 @@
+import { currency, TYPES } from 'make-currency'
+
+currency(1234.56, { money: TYPES.BRL }) // "R$ 1.234,56"
+currency(1234.56, { money: TYPES.EUR }) // "1.234,56 €"
+currency(1234.56, { money: TYPES.JPY }) // "¥1,234.56"
+currency(1234.56, { money: TYPES.GBP }) // "£1,234.56"

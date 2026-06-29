@@ -23,7 +23,6 @@ const config: StorybookConfig = {
         '@helpers': path.resolve(__dirname, '../src/helpers'),
         '@models': path.resolve(__dirname, '../src/models'),
         '@modules': path.resolve(__dirname, '../src/modules'),
-        '@utils': path.resolve(__dirname, '../src/utils'),
         '@TYPES': path.resolve(__dirname, '../src/TYPES'),
         '@typings': path.resolve(__dirname, '../src/typings')
       }
