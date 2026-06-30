@@ -16,6 +16,7 @@
     "type": "git",
     "url": "https://github.com/holasoycael/make-currency.git"
   },
+  "homepage": "https://make-currency.vercel.app",
   "keywords": [
     "mask",
     "currency",

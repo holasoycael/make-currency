@@ -16,6 +16,11 @@ import '../public/style.css'
 
 const preview: Preview = {
   parameters: {
+    options: {
+      storySort: {
+        order: ['Introduction', 'API Reference', '*']
+      }
+    },
     docs: {
       // Customiza o container das páginas MDX (Docs)
       container: ({

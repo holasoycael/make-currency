@@ -5,6 +5,7 @@ import CodeBlock from '../CodeBlock'
 import npm from '../../templates/npm.hbs?raw'
 import yarn from '../../templates/yarn.hbs?raw'
 import cdn from '../../templates/cdn.hbs?raw'
+import unpkg from '../../templates/unpkg.hbs?raw'
 import exportsOverview from '../../templates/exports.hbs?raw'
 import basic from '../../templates/basic.hbs?raw'
 import specific from '../../templates/specific.hbs?raw'
@@ -31,6 +32,10 @@ export const YarnInstall = () => {
 
 export const CdnInstall = () => {
   return <CodeBlock template={cdn} language="html" />
+}
+
+export const UnpkgInstall = () => {
+  return <CodeBlock template={unpkg} language="html" />
 }
 
 export const ExportsOverview = () => {
