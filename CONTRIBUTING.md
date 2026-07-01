@@ -71,6 +71,7 @@ We follow the **Conventional Commits** specification. Commit messages should be 
 ```
 
 ### Types
+
 - **feat**: Support for a new currency, options, or features.
 - **fix**: A bug fix.
 - **docs**: Changes to documentation.
@@ -80,6 +81,7 @@ We follow the **Conventional Commits** specification. Commit messages should be 
 - **chore**: Updating build processes, configurations, package versioning, or dependencies.
 
 Examples:
+
 - `feat: add Russian Ruble (RUB) support`
 - `fix: correct decimal separator for CHF`
 - `docs: update supported currencies table`
@@ -89,13 +91,14 @@ Examples:
 ## 5. Pull Request Checklist
 
 Before submitting a Pull Request, please ensure:
+
 - [ ] Your code passes the linter (`npm run lint`).
 - [ ] All 140+ test suites pass successfully (`npm run test`).
 - [ ] You have updated the [CHANGELOG.md](./CHANGELOG.md) with details of your changes.
 - [ ] If you modified or added a currency configuration, ensure it has 100% test coverage and satisfies the contract rules in [SPEC.md](./src/TYPES/SPEC.md).
 - [ ] The build succeeds (`npm run build`) without errors.
 
-*Note: We use pre-commit git hooks that will run the linter and tests on staged files to prevent broken or unformatted code from being committed.*
+_Note: We use pre-commit git hooks that will run the linter and tests on staged files to prevent broken or unformatted code from being committed._
 
 ---
 

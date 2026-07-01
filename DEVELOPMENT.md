@@ -7,10 +7,12 @@ This guide provides instructions on how to set up, run, test, and build the **ma
 ## 1. Getting Started
 
 ### Prerequisites
+
 - **Node.js**: Version **24.14.1** is specifically used and recommended for developing and running this project.
 - **npm**: Standard Node package manager.
 
 ### Installation
+
 Clone the repository and install the dependencies:
 
 ```bash
@@ -26,14 +28,17 @@ npm install
 Here are the scripts defined in `package.json` that you can run:
 
 ### Build for Production
+
 To build the library for distribution, run:
 
 ```bash
 npm run build
 ```
+
 This builds both CJS (CommonJS) and UMD (minified) bundles into the `/lib` folder and copies critical files like `index.d.ts`, `package.json`, and documentation files.
 
 ### Development Mode (Watch)
+
 To work on the codebase with automatic rebuilding on file changes, run:
 
 ```bash
@@ -41,6 +46,7 @@ npm run dev
 ```
 
 ### Running Tests
+
 This project uses Jest for testing. To run the full test suite once:
 
 ```bash
@@ -54,6 +60,7 @@ npm run test:watch
 ```
 
 ### Linting
+
 To check the code for syntax or styling violations using ESLint and Prettier, run:
 
 ```bash
