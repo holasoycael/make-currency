@@ -1,8 +1,28 @@
-## [0.1.3] - 2026-06-25
+## [0.1.5] - 2026-07-01
+
+### Added
+
+- **Library Documentation**: Created comprehensive documentation pages with live code examples and TypeScript type definitions.
+- **Examples and Demos**: Enhanced the playground with additional examples and demos for all use cases.
+- **README Improvements**: Updated `README.md` with installation and usage instructions.
 
 ### Changed
 
-- Replaced all repository and workflow commands to use `npm` instead of `yarn`.
+- **Dependencies**: Updated `storybook`, `heroui`, `typescript` and other development dependencies to latest versions.
+- **Testing**: Updated `typescript-eslint` configuration to support the latest TypeScript features.
+
+### Fixed
+
+- **Configuration**: Fixed an issue where `tsConfig.json` was not correctly picked up by Storybook, causing type-related build errors in the documentation.
+- **Dependencies**: Updated `package.json` to remove unused `dependencies` and fix `peerDependencies`.
+
+---
+
+## [0.1.4] - 2026-06-30
+
+### Changed
+
+- Replaced all reposi tory and workflow commands to use `npm` instead of `yarn`.
 - Updated pre-commit hooks and package scripts to use `npm run`.
 - Specified Node.js v24 as the development environment standard.
 
