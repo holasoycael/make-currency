@@ -5,8 +5,10 @@ export default {
   collectCoverage: true,
   collectCoverageFrom: [
     'src/**/*.ts(x)?',
+    '!src/@types/**/*',
     '!src/TYPES/**/*',
     '!src/helpers/**/*',
+    '!src/stories/**/*',
     '!src/typings/**/*',
     '!src/models/**/types.ts',
     '!src/index.ts'

@@ -19,7 +19,7 @@ import { Coins as IconCoins } from '@phosphor-icons/react'
 
 // types and interfaces
 import type { Key } from 'react'
-import type { TExchange } from 'index'
+import type { TCurrency, TExchange } from 'index'
 
 const highlighter = await createHighlighter({
   themes: ['night-owl-light'],
@@ -28,7 +28,7 @@ const highlighter = await createHighlighter({
 
 const CurrencyComponent = () => {
   const [value, setValue] = useState(1234.56)
-  const [dataType, setDataType] = useState<TExchange>(Make.TYPES.USD)
+  const [dataType, setDataType] = useState<TExchange>(Make.TYPES.ALL)
 
   const withSymbol = currency(value, { symbol: true, money: dataType })
   const withoutSymbol = currency(value, {
@@ -55,7 +55,7 @@ const CurrencyComponent = () => {
     setValue(floatValue)
   }
 
-  const toArray = Object.values(Make.TYPES).map((type) => type.currency)
+  const toArray = Object.entries(Make.TYPES).map(([key]) => key as TCurrency)
   const handleCurrency = (value: Key | null) => {
     if (value) {
       try {
@@ -122,7 +122,6 @@ const CurrencyComponent = () => {
                 variant="bordered"
                 radius="sm"
                 selectedKey={dataType.currency}
-                defaultSelectedKey={Make.TYPES.USD.currency}
                 onChange={handleCurrency}
                 isClearable={false}
               >

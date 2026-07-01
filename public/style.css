@@ -312,6 +312,17 @@ body,
   padding: 0 !important;
 }
 
+.doc-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.doc-badges p {
+  display: flex;
+  margin: 0 !important;
+  gap: 8px;
+}
 
 pre.shiki {
   background: initial !important;

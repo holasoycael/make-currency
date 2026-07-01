@@ -2,8 +2,9 @@
 import { TExchange } from '@typings/Locale'
 
 export default {
-  lang: 'sq-AL',
+  lang: 'en-US',
   currency: 'ALL',
-  removePrefix: (value: string) => value.slice(0, -2),
-  replaceSymbol: (value: string) => value.replace('Lekë', 'L')
+  removePrefix: (value: string) => value.substring(2),
+  replaceSymbol: (value: string) =>
+    value.replace('ALL ', 'L ').replace(/,/g, ' ').replace(/\./g, ',')
 } satisfies TExchange
